@@ -44,12 +44,9 @@ if (-not (Test-Path $exePath)) {
 }
 
 New-Item -ItemType Directory -Path $bundleDir | Out-Null
-New-Item -ItemType Directory -Path (Join-Path $bundleDir "docs") | Out-Null
-
 Copy-Item $exePath -Destination $bundleDir
 Copy-Item (Join-Path $repoRoot "README.md") -Destination $bundleDir
 Copy-Item (Join-Path $repoRoot "examples") -Destination (Join-Path $bundleDir "examples") -Recurse
-Copy-Item (Join-Path $repoRoot "docs\protocol-matrix.md") -Destination (Join-Path $bundleDir "docs\protocol-matrix.md")
 
 Compress-Archive -Path $bundleDir -DestinationPath $zipPath -Force
 
