@@ -45,6 +45,21 @@ TARGET_ACTIONS = (
 MENU_STATE_ENV = 'TRAE_PATCH_STATE_FILE'
 
 
+def configure_console_output():
+    for stream_name in ('stdout', 'stderr'):
+        stream = getattr(sys, stream_name, None)
+        reconfigure = getattr(stream, 'reconfigure', None)
+        if not callable(reconfigure):
+            continue
+        try:
+            reconfigure(encoding='utf-8', errors='replace')
+        except (OSError, ValueError):
+            try:
+                reconfigure(errors='replace')
+            except (OSError, ValueError):
+                pass
+
+
 def print_result(payload):
     print(json.dumps(payload, ensure_ascii=False, indent=2))
 
@@ -638,6 +653,7 @@ def run_command(args) -> int:
 
 
 def main(argv=None) -> int:
+    configure_console_output()
     argv = list(sys.argv[1:] if argv is None else argv)
     parser = build_parser()
     args = parser.parse_args(argv)
