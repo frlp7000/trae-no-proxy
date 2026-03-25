@@ -64,6 +64,8 @@ trae-patch doctor
 trae-patch patch-all
 ```
 
+注意：Trae 或 Trae CN 客户端升级后，前端 bundle 可能会被官方新版本覆盖，之前打过的补丁可能失效。这种情况下通常只需要重新执行一次 `trae-patch patch-all`，必要时先运行 `trae-patch doctor` 检查当前状态。
+
 路径不标准时，可以手动指定：
 
 ```bash
@@ -115,6 +117,15 @@ trae-patch restore-all
 ```bash
 trae-patch relay --upstream-base https://your.gateway.example/v1
 ```
+
+如果你启用了 relay，那么 Trae 里的“自定义请求地址”就不要再填写远端网关，而是要填写本地 relay 地址。按默认参数启动时，本地 relay 地址就是 `http://127.0.0.1:8787`。
+
+示例：
+- 上游网关地址：`https://your.gateway.example/v1`
+- 启动 relay：`trae-patch relay --upstream-base https://your.gateway.example/v1`
+- Trae 里的“自定义请求地址”：`http://127.0.0.1:8787`
+
+如果你把 relay 改成了别的监听端口，例如 `8899`，那么 Trae 里就填写对应的本地地址，例如 `http://127.0.0.1:8899`。
 
 查看状态或停止 relay：
 
