@@ -1,0 +1,32 @@
+[build-system]
+requires = ['setuptools>=68']
+build-backend = 'setuptools.build_meta'
+
+[project]
+name = 'trae-custom-endpoint-patch'
+version = '0.2.0'
+description = 'Patch Trae CN to expose custom endpoint controls and optionally relay incompatible OpenAI-compatible gateways.'
+readme = 'README.md'
+requires-python = '>=3.10'
+keywords = ['trae', 'vscode', 'openai', 'gateway', 'proxy', 'patch']
+classifiers = [
+  'Environment :: Console',
+  'Intended Audience :: Developers',
+  'Operating System :: OS Independent',
+  'Programming Language :: Python :: 3',
+  'Programming Language :: Python :: 3.10',
+  'Programming Language :: Python :: 3.11',
+  'Topic :: Software Development :: Build Tools',
+  'Topic :: Utilities'
+]
+
+dependencies = []
+
+[project.scripts]
+trae-patch = 'trae_custom_endpoint_patch.cli:main'
+
+[tool.setuptools]
+package-dir = {'' = 'src'}
+
+[tool.setuptools.packages.find]
+where = ['src']

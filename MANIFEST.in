@@ -1,0 +1,15 @@
+prune .tmp
+prune scratch
+prune .claude
+prune src/trae_custom_endpoint_patch.egg-info
+prune tests/__pycache__
+prune tools/__pycache__
+
+exclude quote.txt
+exclude quote2.txt
+exclude small.txt
+exclude test.txt
+exclude tools/trae_newapi_tap.py.bak-20260324-compat
+
+global-exclude __pycache__
+global-exclude *.py[cod]
