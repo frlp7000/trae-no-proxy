@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="660" height="851" viewBox="0 0 660 851" role="img" aria-labelledby="title desc">
+  <title id="title">Trae 添加模型界面</title>
+  <desc id="desc">显示服务商、模型、模型 ID、API 密钥和自定义请求地址输入框的深色界面。</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2f3338" />
+      <stop offset="100%" stop-color="#262a2f" />
+    </linearGradient>
+    <style>
+      .title { font: 700 18px 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif; fill: #f2f4f7; }
+      .label { font: 600 15px 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif; fill: #d7dbe2; }
+      .asterisk { font: 700 15px 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif; fill: #ff6b6b; }
+      .value { font: 600 14px 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif; fill: #eff2f6; }
+      .placeholder { font: 500 14px 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif; fill: #9ba3ae; }
+      .hint { font: 500 12px 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif; fill: #c8cdd6; }
+      .buttonText { font: 700 16px 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif; fill: #2b2f35; }
+      .small { font: 500 12px 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif; fill: #bfc5cf; }
+      .line { stroke: #4a5058; stroke-width: 1; }
+    </style>
+  </defs>
+
+  <rect width="660" height="851" fill="url(#bg)" rx="12" />
+  <text class="title" x="16" y="38">添加模型</text>
+  <text x="628" y="36" text-anchor="middle" font-size="26" fill="#d7dbe2">×</text>
+
+  <text class="asterisk" x="16" y="97">*</text>
+  <text class="label" x="31" y="97">服务商</text>
+  <rect x="16" y="126" width="628" height="42" rx="6" fill="#34393f" stroke="#444a52" />
+  <text class="value" x="36" y="152">OpenAI</text>
+  <path d="M618 143 l8 8 l8-8" fill="none" stroke="#cfd4dc" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+
+  <text class="asterisk" x="16" y="211">*</text>
+  <text class="label" x="31" y="211">模型</text>
+  <rect x="16" y="236" width="628" height="42" rx="6" fill="#34393f" stroke="#444a52" />
+  <text class="value" x="36" y="262">自定义模型</text>
+  <path d="M618 253 l8 8 l8-8" fill="none" stroke="#cfd4dc" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+
+  <text class="asterisk" x="16" y="327">*</text>
+  <text class="label" x="31" y="327">模型 ID</text>
+  <text class="hint" x="564" y="327" text-anchor="end">前往服务商平台查询</text>
+  <rect x="16" y="348" width="628" height="42" rx="6" fill="#34393f" stroke="#444a52" />
+  <text class="placeholder" x="36" y="374">输入模型 ID</text>
+
+  <text class="asterisk" x="16" y="445">*</text>
+  <text class="label" x="31" y="445">API 密钥</text>
+  <text class="hint" x="606" y="445" text-anchor="end">获取 API 密钥</text>
+  <rect x="16" y="466" width="628" height="42" rx="6" fill="#34393f" stroke="#444a52" />
+  <text class="placeholder" x="36" y="492">输入 API 密钥</text>
+
+  <text class="label" x="16" y="562">高级配置</text>
+  <path d="M110 553 l6 6 l6-6" fill="none" stroke="#cfd4dc" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+
+  <text class="label" x="16" y="607">自定义请求地址</text>
+  <circle cx="159" cy="601" r="8" fill="none" stroke="#aeb5bf" />
+  <text class="small" x="159" y="605" text-anchor="middle">i</text>
+  <rect x="16" y="620" width="628" height="42" rx="6" fill="#34393f" stroke="#444a52" />
+  <text class="placeholder" x="36" y="646">请填写，为空则使用系统默认地址</text>
+
+  <line class="line" x1="16" y1="688" x2="644" y2="688" />
+  <rect x="16" y="710" width="628" height="44" rx="6" fill="#f0f2f7" />
+  <text class="buttonText" x="330" y="739" text-anchor="middle">添加模型</text>
+</svg>

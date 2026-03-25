@@ -4,7 +4,13 @@
 
 项目包含两部分：
 - 客户端补丁：打开自定义模型管理相关入口，并把请求策略固定到 `local`
-- 可选 relay：在少数网关对 `tool` 历史消息兼容不完整时，做本地协议适配
+- 可选 relay：当前只处理 `/chat/completions` 请求中的兼容性问题，主要用于修正 `role=tool` 的 `content` 数组形状
+
+## 界面预览
+
+补丁生效后，可以在客户端里看到类似下面的自定义模型添加界面：
+
+![Trae 添加模型界面](assets/add-model-dialog.svg)
 
 ## 功能
 
@@ -92,10 +98,17 @@ trae-patch restore-all
 
 ## Relay
 
-只有在你的网关对 `tool` 历史消息兼容不好时，才建议启用 relay。常见现象包括：
+当前 relay 不是通用协议网关，也不会处理所有模型协议。它现在只针对 `/chat/completions` 这一条接口做兼容处理，核心是把 `role=tool` 消息里的 `content` 数组整理成上游更容易接受的文本形状。
+
+只有在你的网关对 `/chat/completions` 下的 `tool` 历史消息兼容不好时，才建议启用 relay。常见现象包括：
 - 模型本身可用，但 Trae 内请求持续报 `400`、`502`、`524`
-- `curl` 直连最小请求成功，Trae 的真实请求失败
+- `curl` 直连最小请求成功，Trae 的真实 `/chat/completions` 请求失败
 - 上游不接受 `role=tool` 或 `content` 数组形式
+
+当前不在 relay 处理范围内的包括：
+- `/responses`
+- `/messages`
+- Gemini native / 其他 provider-native 协议
 
 启动 relay：
 
