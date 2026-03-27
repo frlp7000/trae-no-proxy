@@ -64,6 +64,8 @@ trae-patch doctor
 trae-patch patch-all
 ```
 
+运行完命令后，如以启动客户端，需要重启客户端。
+
 注意：Trae 或 Trae CN 客户端升级后，前端 bundle 可能会被官方新版本覆盖，之前打过的补丁可能失效。这种情况下通常只需要重新执行一次 `trae-patch patch-all`，必要时先运行 `trae-patch doctor` 检查当前状态。
 
 路径不标准时，可以手动指定：
